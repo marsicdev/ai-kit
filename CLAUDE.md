@@ -79,3 +79,43 @@ When creating new projects, ALWAYS generate a project CLAUDE.md with:
 - Update when architecture changes.
 
 <!-- END GENERAL RULES -->
+
+---
+
+## Code Style — TypeScript Rules
+
+### ALWAYS
+- Use TypeScript, never plain JavaScript
+- Use async/await, never .then() chains
+- Use named exports when possible
+- Use early returns to reduce nesting
+- Use descriptive variable names
+- Max 350 lines per file
+- Max one React component per file
+
+### NEVER
+- Use `any` type (find proper type or use `unknown`)
+- Use `var` (use `const` or `let`)
+- Leave `console.log` in production code
+- Use magic numbers (define constants)
+
+---
+
+## Framework Skills
+
+### React Projects
+- Always apply `vercel-react-best-practices` skill
+- Focus on: performance patterns, Server Components, data fetching, bundle optimization
+
+### React Native Projects
+- Always apply `react-native-best-practices` skill
+- Focus on: FPS, TTI, bundle size, memory leaks, re-renders, animations
+
+### Expo Projects
+- Always apply `expo-app-design` skills:
+  - `building-native-ui` — components, animations, tabs, navigation
+  - `native-data-fetching` — API calls, caching, offline
+  - `expo-tailwind-setup` — Tailwind + NativeWind
+  - `expo-api-routes` — Expo Router API routes
+- For deployment: use `expo-deployment` skills
+- For upgrades: use `upgrading-expo` skill
