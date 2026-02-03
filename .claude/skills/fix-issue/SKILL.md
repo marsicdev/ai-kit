@@ -1,6 +1,6 @@
 ---
 name: fix-issue
-description: Analyze and fix GitHub issues in Flutter projects. Use when given a GitHub issue URL or number to investigate, understand the root cause, implement a fix, and verify the solution works.
+description: Analyze and fix GitHub issues. Use when given a GitHub issue URL or number to investigate, understand the root cause, implement a fix, and verify the solution works.
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, WebFetch
 ---
 
@@ -65,7 +65,7 @@ After fixing, provide:
 
 When ready to commit, use format:
 ```
-fix(scope): brief description of the fix
+fix(scope): TICKET-123 brief description of the fix
 
 Closes #123
 ```

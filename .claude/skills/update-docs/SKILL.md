@@ -1,6 +1,6 @@
 ---
 name: update-docs
-description: Generate and maintain project documentation for Flutter codebases. Use when initializing docs for a new project, updating architecture docs, or creating feature specifications. Creates ai_docs/ and ai_specs/ folders with structured documentation.
+description: Generate and maintain project documentation. Use when initializing docs for a new project, updating architecture docs, or creating feature specifications. Creates ai_docs/ and ai_specs/ folders with structured documentation.
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 ---
 
@@ -42,7 +42,7 @@ When asked to initialize documentation:
 
 1. Deep scan the codebase to understand the full architecture
 2. Create `ai_docs/` with:
-   - `architecture.md` - Project goal, folder structure, tech stack, state management, navigation, theming
+   - `architecture.md` - Project goal, folder structure, tech stack, state management, routing, theming
    - `database.md` - Data models, local storage, remote database schema
    - `README.md` - Index of all docs
 3. Create `ai_specs/` with:
@@ -57,16 +57,17 @@ When asked to update documentation:
 3. Always update the `README.md` index after changes
 4. Keep specs in `ai_specs/` separate from system docs
 
-## Flutter-Specific Documentation
+## Documentation Content
 
-Include these in architecture docs:
+Include these in architecture docs (adapt based on project type):
 
-- State management approach (Riverpod, Bloc, etc.)
-- Navigation structure (GoRouter, Navigator 2.0, etc.)
+- State management approach
+- Navigation/routing structure
 - Dependency injection setup
-- Build flavors/environments (dev, staging, prod)
+- Build configurations/environments
 - Key packages and their purposes
-- Code generation tools (build_runner, freezed, etc.)
+- Code generation tools (if any)
+- Testing strategy
 
 ## Naming Conventions
 

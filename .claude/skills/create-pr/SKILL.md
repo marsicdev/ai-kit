@@ -39,8 +39,6 @@ Brief description of what this PR does and why.
 - [ ] Manual testing steps performed
 - [ ] Unit tests added/updated
 - [ ] Integration tests pass
-- [ ] Tested on iOS
-- [ ] Tested on Android
 
 ## Screenshots
 (If UI changes, include before/after screenshots)
@@ -81,10 +79,10 @@ gh pr create --base develop
 
 Follow conventional commits:
 ```
-type(scope): brief description
+type(scope): TICKET-123 brief description
 
 Examples:
-feat(auth): add biometric login support
-fix(cart): resolve quantity calculation bug
+feat(auth): TEC-16401 add biometric login support
+fix(cart): PROJ-283 resolve quantity calculation bug
 refactor(api): simplify error handling
 ```

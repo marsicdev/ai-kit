@@ -1,26 +1,40 @@
 ---
 name: commit
-description: Create conventional git commits from all uncommitted changes (staged and unstaged). Use when you want to commit all changes with a properly formatted message following conventional commits specification.
+description: Create conventional git commits from all uncommitted changes. Extracts ticket numbers from branch names and uses conventional commit format.
 allowed-tools: Bash
 ---
 
 # Git Commit (All Changes)
 
-Create a git commit from all uncommitted changes using Conventional Commits format.
+Create a git commit from all uncommitted changes using Conventional Commits format with ticket extraction.
 
 ## Process
 
 1. **Stage all changes**: Run `git add -A` to stage all changes
-2. **Review changes**: Run `git diff --cached` to see what will be committed
-3. **Create commit**: Generate and execute commit with proper format
+2. **Get branch name**: Run `git branch --show-current` to extract ticket number
+3. **Review changes**: Run `git diff --cached` to see what will be committed
+4. **Create commit**: Generate and execute commit with proper format
 
 ## Commit Message Format
 
 ```
-type(scope): subject
+type(scope): TICKET-123 subject
 
 [optional body]
 ```
+
+If no ticket found in branch name, omit it:
+```
+type(scope): subject
+```
+
+### Ticket Extraction
+
+Extract ticket from branch name patterns:
+- `feature/TEC-16401-description` → `TEC-16401`
+- `bugfix/PROJ-283-fix-login` → `PROJ-283`
+- `hotfix/APP-12345-critical` → `APP-12345`
+- Pattern: `[A-Z]+-\d+` (uppercase prefix, dash, numbers)
 
 ### Types
 
@@ -42,15 +56,20 @@ type(scope): subject
 
 - **Subject**: Imperative mood, present tense, no period, ~50 chars
 - **Scope**: Optional, describes the affected area (e.g., `auth`, `ui`, `api`)
+- **Ticket**: Include if found in branch name, placed after colon
 - **Body**: Optional, wrap at 72 chars, explain "what" and "why"
 
 ## Examples
 
+With ticket (from branch `feature/TEC-16401-auth-improvements`):
 ```
-feat(auth): add biometric login support
+feat(auth): TEC-16401 add biometric login support
 
-fix(cart): resolve quantity update on iOS
+fix(cart): PROJ-283 resolve quantity update bug
+```
 
+Without ticket (from branch `main` or `develop`):
+```
 refactor: simplify user repository data mapping
 
 docs: update API endpoint documentation
@@ -61,3 +80,4 @@ docs: update API endpoint documentation
 - Never commit sensitive files (.env, credentials, API keys)
 - Review diff before committing
 - Keep commits atomic and focused
+- Never include AI attribution (Co-Authored-By, etc.)

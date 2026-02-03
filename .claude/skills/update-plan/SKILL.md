@@ -64,5 +64,5 @@ docs: update implementation plan
 Look for plan files in:
 - `ai_specs/plans/*.md`
 - `docs/plans/*.md`
-- Root directory `*-plan.md`
+- Root directory `*-plan.md` or `PLAN.md`
 - Any file mentioned in recent conversation

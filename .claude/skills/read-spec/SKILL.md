@@ -81,7 +81,7 @@ Description of the user interface and interactions.
 
 - User personas and use cases
 - Happy path and error flows
-- Platform-specific behavior (iOS/Android/Web)
+- Platform-specific behavior (if applicable)
 - Offline capabilities
 - Analytics and tracking
 - Localization requirements
