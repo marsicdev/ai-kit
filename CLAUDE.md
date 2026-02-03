@@ -79,3 +79,47 @@ When creating new projects, ALWAYS generate a project CLAUDE.md with:
 - Update when architecture changes.
 
 <!-- END GENERAL RULES -->
+
+---
+
+## Flutter / Dart Rules
+
+### Imports
+- Use `package:app_name/src/...` imports, never relative `../` paths
+
+### Sizes & Gaps
+- Use `Sizes.p4`, `Sizes.p8`, `Sizes.p16` etc. from `app_sizes.dart`
+- Use `gapH8`, `gapH16`, `gapW24` SizedBox constants, never `SizedBox(height: 16.0)`
+
+### Enums
+- Add properties, constructors, and methods directly to enums (enhanced enums)
+
+### Constructors
+- Use `required this.field` pattern, not private backing fields with getters
+
+### Widgets
+- Extract UI into reusable `StatelessWidget` classes, not `_build` helper methods
+
+### Riverpod
+- Use `@Riverpod(keepAlive: true)` for critical providers (SharedPreferences, etc.)
+- Initialize eagerly before `runApp`, access synchronously with `.requireValue`
+
+### Shell Aliases
+
+```bash
+fclean    # flutter clean
+fpg       # flutter pub get
+fpu       # flutter pub upgrade
+brb       # dart run build_runner build -d
+brw       # dart run build_runner watch -d
+fpgbrb    # fpg && brb
+fpgbrw    # fpg && brw
+```
+
+Assume `brw` runs automatically in projects using build_runner.
+
+### Conventional Commits
+
+Format: `type(scope): subject`
+
+Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert

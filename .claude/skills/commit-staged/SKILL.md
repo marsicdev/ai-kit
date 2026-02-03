@@ -1,17 +1,17 @@
 ---
-name: commit
-description: Create conventional git commits from all uncommitted changes (staged and unstaged). Use when you want to commit all changes with a properly formatted message following conventional commits specification.
+name: commit-staged
+description: Create conventional git commits from staged changes only. Use when you have selectively staged changes and want to commit just those with a properly formatted message.
 allowed-tools: Bash
 ---
 
-# Git Commit (All Changes)
+# Git Commit (Staged Only)
 
-Create a git commit from all uncommitted changes using Conventional Commits format.
+Create a git commit from staged changes only using Conventional Commits format.
 
 ## Process
 
-1. **Stage all changes**: Run `git add -A` to stage all changes
-2. **Review changes**: Run `git diff --cached` to see what will be committed
+1. **Check staged changes**: Run `git diff --cached` to see staged changes
+2. **Verify staging**: Ensure the right files are staged with `git status`
 3. **Create commit**: Generate and execute commit with proper format
 
 ## Commit Message Format
@@ -52,12 +52,11 @@ feat(auth): add biometric login support
 fix(cart): resolve quantity update on iOS
 
 refactor: simplify user repository data mapping
-
-docs: update API endpoint documentation
 ```
 
 ## Constraints
 
+- Only commit what is staged (do not stage additional files)
 - Never commit sensitive files (.env, credentials, API keys)
-- Review diff before committing
+- Review staged diff before committing
 - Keep commits atomic and focused
