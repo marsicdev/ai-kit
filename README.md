@@ -59,9 +59,13 @@ Add these — the symlinks point into the submodule, so track the submodule, not
 
 **Agents (2):** brainstormer, code-reviewer
 
-**Skills (18):**
-- Shared: accessibility-compliance, ui-skills, ui-ux-pro-max, web-design-guidelines, frontend-design, seo-audit, pptx, agent-browser, find-skills, skill-creator, supabase-postgres-best-practices, better-auth-best-practices, ai-sdk, references/
-- Migrated from commands: commit, commit-and-push, handoff, interview, code-review
+**Skills (25):**
+- Design: accessibility-compliance, ui-skills, ui-ux-pro-max, web-design-guidelines, frontend-design
+- Backend: supabase-postgres-best-practices, better-auth-best-practices, ai-sdk
+- Tools: seo-audit, pptx, agent-browser, find-skills, skill-creator, references/
+- Workflow: commit, commit-staged, commit-and-push, create-pr, fix-issue, update-plan, update-docs, read-spec, handoff, interview, code-review
+
+All workflow skills use **conventional commits** format with **ticket extraction** from branch names.
 
 ### `web` branch (extends main)
 
@@ -73,4 +77,7 @@ Add these — the symlinks point into the submodule, so track the submodule, not
 
 **Agents (+1):** mobile-developer (Flutter-focused)
 
-**Skills (+10):** make-plan, commit (Flutter override), commit-staged, create-pr, fix-issue, update-docs, update-plan, read-spec, flutter-patterns (with embedded patterns), flutter-setup (with embedded guides)
+**Skills (+3):**
+- make-plan (Flutter folder structure)
+- flutter-patterns (with 6 embedded pattern docs)
+- flutter-setup (with 7 embedded setup guides)
