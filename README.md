@@ -75,11 +75,12 @@ All workflow skills use **conventional commits** format with **ticket extraction
 - Web-specific: references/, better-auth-best-practices, ai-sdk, seo-audit, agent-browser, web-design-guidelines
 - Frameworks: vercel-react-best-practices, vercel-composition-patterns, next-best-practices, next-upgrade, react-native-best-practices, building-native-ui, native-data-fetching, expo-api-routes, expo-cicd-workflows, expo-deployment, expo-dev-client, expo-tailwind-setup, upgrading-expo, use-dom, remotion-best-practices
 
-### `flutter` branch (22 skills)
+### `flutter` branch (23 skills)
 
 **Agents (+1):** mobile-developer (Flutter-focused)
 
-**Skills (+3):**
+**Skills (+4):**
 - make-plan (Flutter folder structure)
 - flutter-patterns (with 6 embedded pattern docs)
 - flutter-setup (with 7 embedded setup guides)
+- refactor (apply Flutter/Dart rules from CLAUDE.md)
