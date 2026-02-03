@@ -5,26 +5,30 @@
 These rules are ABSOLUTE:
 
 ### NEVER Publish Sensitive Data
+
 - NEVER publish passwords, API keys, tokens to git/npm/docker
 - Before ANY commit: verify no secrets included
 
 ### NEVER Commit .env Files
+
 - NEVER commit these files to git:
-  - .env
-  - .env.local
-  - .env.development
-  - .env.production
-  - .env.test
-  - .env.staging
+    - .env
+    - .env.local
+    - .env.development
+    - .env.production
+    - .env.test
+    - .env.staging
 - ALWAYS verify all .env files are in .gitignore
 
 ### NEVER Add Co-Authored-By in Commits
+
 - NEVER include `Co-Authored-By: Claude` or similar AI attribution lines in commit messages
 - Keep commits clean without AI tool signatures
 
 ---
 
 ## Testing
+
 - Framework: Playwright (when used)
 - Location: /tests folder in project root
 - Naming: .test.ts or .spec.ts
@@ -34,11 +38,13 @@ These rules are ABSOLUTE:
 ## Code Comments — Rules for Claude
 
 ### DO
+
 - Add comments where business logic is complex
 - Add comments where code is not self-explanatory
 - Keep comments concise and useful
 
 ### DO NOT
+
 - Add obvious comments
 - Write long paragraph comments
 - Comment every line
@@ -49,6 +55,7 @@ These rules are ABSOLUTE:
 ## Project CLAUDE.md Requirements
 
 When creating new projects, ALWAYS generate a project CLAUDE.md with:
+
 - Project overview (what it does)
 - Tech stack
 - Build commands
@@ -84,23 +91,43 @@ When creating new projects, ALWAYS generate a project CLAUDE.md with:
 
 ## Flutter / Dart Rules
 
+### ALWAYS
+
+- Use early returns to reduce nesting
+- Use descriptive variable names
+- Max 350 lines per file
+- Max one Widget per file
+- Handle null safety properly
+- Use `final` and `const` appropriately
+- Use `handle` prefix on event handler methods
+- Use `fetch` prefix for network data retrieval methods
+- Use `create` prefix for remote data creation methods
+- Use `load` prefix for local data retrieval methods
+- Use `save` prefix for local data storage methods
+
 ### Imports
+
 - Use `package:app_name/src/...` imports, never relative `../` paths
 
 ### Sizes & Gaps
+
 - Use `Sizes.p4`, `Sizes.p8`, `Sizes.p16` etc. from `app_sizes.dart`
 - Use `gapH8`, `gapH16`, `gapW24` SizedBox constants, never `SizedBox(height: 16.0)`
 
 ### Enums
+
 - Add properties, constructors, and methods directly to enums (enhanced enums)
 
 ### Constructors
+
 - Use `required this.field` pattern, not private backing fields with getters
 
 ### Widgets
+
 - Extract UI into reusable `StatelessWidget` classes, not `_build` helper methods
 
 ### Riverpod
+
 - Use `@Riverpod(keepAlive: true)` for critical providers (SharedPreferences, etc.)
 - Initialize eagerly before `runApp`, access synchronously with `.requireValue`
 
