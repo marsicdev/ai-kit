@@ -1,18 +1,18 @@
 ---
-name: commit
-description: Create conventional git commits from all uncommitted changes. Extracts ticket numbers from branch names and uses conventional commit format.
+name: commit-staged
+description: Create conventional git commits from staged changes only. Extracts ticket numbers from branch names and uses conventional commit format.
 allowed-tools: Bash
 ---
 
-# Git Commit (All Changes)
+# Git Commit (Staged Only)
 
-Create a git commit from all uncommitted changes using Conventional Commits format with ticket extraction.
+Create a git commit from staged changes only using Conventional Commits format with ticket extraction.
 
 ## Process
 
-1. **Stage all changes**: Run `git add -A` to stage all changes
+1. **Check staged changes**: Run `git diff --cached` to see staged changes
 2. **Get branch name**: Run `git branch --show-current` to extract ticket number
-3. **Review changes**: Run `git diff --cached` to see what will be committed
+3. **Verify staging**: Ensure the right files are staged with `git status`
 4. **Create commit**: Generate and execute commit with proper format
 
 ## Commit Message Format
@@ -61,23 +61,18 @@ Extract ticket from branch name patterns:
 
 ## Examples
 
-With ticket (from branch `feature/TEC-16401-auth-improvements`):
 ```
 feat(auth): TEC-16401 add biometric login support
 
 fix(cart): PROJ-283 resolve quantity update bug
-```
 
-Without ticket (from branch `main` or `develop`):
-```
 refactor: simplify user repository data mapping
-
-docs: update API endpoint documentation
 ```
 
 ## Constraints
 
+- Only commit what is staged (do not stage additional files)
 - Never commit sensitive files (.env, credentials, API keys)
-- Review diff before committing
+- Review staged diff before committing
 - Keep commits atomic and focused
 - Never include AI attribution (Co-Authored-By, etc.)
