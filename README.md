@@ -55,25 +55,27 @@ Add these — the symlinks point into the submodule, so track the submodule, not
 
 ## What's Included
 
-### `main` branch
+### `main` branch (19 skills)
 
 **Agents (2):** brainstormer, code-reviewer
 
-**Skills (25):**
-- Design: accessibility-compliance, ui-skills, ui-ux-pro-max, web-design-guidelines, frontend-design
-- Backend: supabase-postgres-best-practices, better-auth-best-practices, ai-sdk
-- Tools: seo-audit, pptx, agent-browser, find-skills, skill-creator, references/
+**Skills:**
+- Design: accessibility-compliance, ui-skills, ui-ux-pro-max, frontend-design
+- Backend: supabase-postgres-best-practices
+- Tools: pptx, find-skills, skill-creator
 - Workflow: commit, commit-staged, commit-and-push, create-pr, fix-issue, update-plan, update-docs, read-spec, handoff, interview, code-review
 
 All workflow skills use **conventional commits** format with **ticket extraction** from branch names.
 
-### `web` branch (extends main)
+### `web` branch (40 skills)
 
 **Agents (+4):** frontend-developer, fullstack-developer, accessibility-tester, ui-ux-designer
 
-**Skills (+15):** vercel-react-best-practices, vercel-composition-patterns, next-best-practices, next-upgrade, react-native-best-practices, building-native-ui, native-data-fetching, expo-api-routes, expo-cicd-workflows, expo-deployment, expo-dev-client, expo-tailwind-setup, upgrading-expo, use-dom, remotion-best-practices
+**Skills (+21):**
+- Web-specific: references/, better-auth-best-practices, ai-sdk, seo-audit, agent-browser, web-design-guidelines
+- Frameworks: vercel-react-best-practices, vercel-composition-patterns, next-best-practices, next-upgrade, react-native-best-practices, building-native-ui, native-data-fetching, expo-api-routes, expo-cicd-workflows, expo-deployment, expo-dev-client, expo-tailwind-setup, upgrading-expo, use-dom, remotion-best-practices
 
-### `flutter` branch (extends main)
+### `flutter` branch (22 skills)
 
 **Agents (+1):** mobile-developer (Flutter-focused)
 
