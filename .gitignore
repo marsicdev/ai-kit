@@ -1,0 +1,4 @@
+settings.local.json
+.env
+*.bak
+.DS_Store
